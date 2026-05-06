@@ -1,1 +1,0 @@
-* a846674 feat: Initial commit of Student Management System
