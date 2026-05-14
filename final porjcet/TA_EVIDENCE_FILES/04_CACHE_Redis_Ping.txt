@@ -1,11 +1,11 @@
 TA Evidence 04 - Redis Cache Ping
-Generated: 2026-05-14T12:34:03Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:58:42Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
 
 ## Redis PING
-$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose exec -T redis redis-cli PING
+$ cd '/Users/ali-ezz/Downloads/r-and-python/final porjcet' && docker compose exec -T redis redis-cli PING
 PONG
 [OK] Command completed
 
@@ -13,13 +13,13 @@ PONG
 $ curl -fsS http://127.0.0.1:8000/system/metrics
 # HELP tms_http_requests_total Total HTTP requests observed by the app
 # TYPE tms_http_requests_total counter
-tms_http_requests_total 78
+tms_http_requests_total 7
 # HELP tms_http_errors_total Total HTTP 5xx requests observed by the app
 # TYPE tms_http_errors_total counter
 tms_http_errors_total 0
 # HELP tms_http_request_latency_average_ms Average HTTP latency in milliseconds
 # TYPE tms_http_request_latency_average_ms gauge
-tms_http_request_latency_average_ms 19.9
+tms_http_request_latency_average_ms 4.2
 # HELP tms_cache_hit_ratio Cache hit ratio
 # TYPE tms_cache_hit_ratio gauge
 tms_cache_hit_ratio 0.0

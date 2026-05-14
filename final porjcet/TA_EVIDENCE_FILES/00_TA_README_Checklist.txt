@@ -1,6 +1,6 @@
 TA Evidence 00 - Presentation Checklist
-Generated: 2026-05-14T12:34:03Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:58:32Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
 Recommended TA command:

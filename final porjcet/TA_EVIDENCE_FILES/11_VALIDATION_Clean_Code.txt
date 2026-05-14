@@ -1,68 +1,68 @@
 TA Evidence 11 - Validation, Clean Code, and Project Structure
-Generated: 2026-05-14T12:34:28Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:59:21Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
 
 ## Backend test files
-$ find '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests' -maxdepth 1 -type f -name 'test_*.py' | sort
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_analytics.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_auth.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_bulk_ops.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_comments.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_export.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_focus.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_friends.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_notifications.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_password_reset.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_projects.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_rate_limiting.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_role_authorization.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_search.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_status_transitions.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_system_monitoring.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_tasks.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_users.py
+$ find '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests' -maxdepth 1 -type f -name 'test_*.py' | sort
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_analytics.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_auth.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_bulk_ops.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_comments.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_export.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_focus.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_friends.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_notifications.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_password_reset.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_projects.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_rate_limiting.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_role_authorization.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_search.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_status_transitions.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_system_monitoring.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_tasks.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/tests/test_users.py
 [OK] Command completed
 
 ## Validation/security helpers
-$ find '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app' -type f | sort | grep -E '(schemas|validators|security|dependencies|middleware)'
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__init__.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/__init__.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/error_handler.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/logging.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/rate_limiter.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/error_handler.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/logging.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/rate_limiter.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__init__.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/__init__.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/analytics_focus.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/auth.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/common.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/notification.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/project.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/task.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/team_chat.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/user.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/analytics_focus.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/auth.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/common.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/notification.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/project.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/task.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/team_chat.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/user.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/__pycache__/dependencies.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/__pycache__/security.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/__pycache__/validators.cpython-39.pyc
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/dependencies.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/security.py
-/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/validators.py
+$ find '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app' -type f | sort | grep -E '(schemas|validators|security|dependencies|middleware)'
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/__init__.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/__pycache__/__init__.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/__pycache__/error_handler.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/__pycache__/logging.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/__pycache__/rate_limiter.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/error_handler.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/logging.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/middleware/rate_limiter.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__init__.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/__init__.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/analytics_focus.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/auth.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/common.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/notification.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/project.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/task.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/team_chat.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/__pycache__/user.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/analytics_focus.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/auth.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/common.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/notification.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/project.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/task.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/team_chat.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/schemas/user.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/utils/__pycache__/dependencies.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/utils/__pycache__/security.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/utils/__pycache__/validators.cpython-39.pyc
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/utils/dependencies.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/utils/security.py
+/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/app/utils/validators.py
 [OK] Command completed
 
 ## Requirements file
-$ sed -n '1,220p' '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/requirements.txt'
+$ sed -n '1,220p' '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/requirements.txt'
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 python-multipart==0.0.6
@@ -89,10 +89,10 @@ pytest-cov==4.1.0
 [OK] Command completed
 
 ## Focused validation/security tests
-$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend' && '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/.venv/bin/pytest' tests/test_auth.py tests/test_role_authorization.py tests/test_rate_limiting.py -q --tb=line
+$ cd '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend' && '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/.venv/bin/pytest' tests/test_auth.py tests/test_role_authorization.py tests/test_rate_limiting.py -q --tb=line
 ============================= test session starts ==============================
 platform darwin -- Python 3.9.6, pytest-7.4.3, pluggy-1.6.0
-rootdir: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend
+rootdir: /Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend
 configfile: pytest.ini
 plugins: cov-4.1.0, asyncio-0.21.1, anyio-3.7.1
 asyncio: mode=strict
@@ -106,7 +106,7 @@ tests/test_rate_limiting.py .......                                      [100%]
 Name                                   Stmts   Miss  Cover   Missing
 --------------------------------------------------------------------
 app/__init__.py                            1      0   100%
-app/config.py                             51      9    82%   47, 49, 53, 56, 63-67
+app/config.py                             51     10    80%   47, 49, 54-56, 63-67
 app/database.py                           62     48    23%   24-28, 32-68, 77-101, 106-128
 app/main.py                               55      3    95%   42-43, 101
 app/middleware/__init__.py                 3      0   100%
@@ -175,9 +175,9 @@ app/utils/nlp_parser.py                   31     22    29%   26-51
 app/utils/security.py                     71     31    56%   55-56, 60-61, 68-69, 73-83, 87-89, 93, 98-127
 app/utils/validators.py                    8      8     0%   1-25
 --------------------------------------------------------------------
-TOTAL                                   3595   1444    60%
+TOTAL                                   3595   1445    60%
 Coverage HTML written to dir cov_html
 
 
-============================== 19 passed in 7.90s ==============================
+============================== 19 passed in 7.92s ==============================
 [OK] Command completed

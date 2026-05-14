@@ -1,6 +1,6 @@
 TA Evidence 10 - JWT Login Demo
-Generated: 2026-05-14T12:34:27Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:59:20Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
 Default demo credentials:
@@ -10,19 +10,19 @@ password: admin12345
 ## JSON login returns access and refresh tokens
 $ curl -fsS -X POST http://127.0.0.1:8000/auth/login -H 'Content-Type: application/json' -d '{"username":"admin@5stara.com","password":"admin12345"}' | python3 -m json.tool
 {
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3ODc2Mzg2N30.IMzwhy0dGO6qhBB7GIsHY79izzhFzVaj1QqVbs_oJWo",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3ODc2NTM2MX0.FR1WIuuv25uX-GbBaftPTZr4YfZyxxB47zCnHDQ6nYA",
     "token_type": "bearer",
     "expires_in": 1800,
-    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3OTM2Njg2NywidHlwZSI6InJlZnJlc2giLCJqdGkiOiI5NWMzODg1YWJiYzk5ODdlZjYyOTg0YzAifQ.PEoqd3S8NPKZhs2z7GUIZFnP97YN9yPILtFPTlx8cC8"
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3OTM2ODM2MSwidHlwZSI6InJlZnJlc2giLCJqdGkiOiJkNWJkZDZlMmViNzQxZTkxZmQxNDEwMjYifQ.9hba5oLbJxaKutZdqBiA2ecXGG6X_Z7EW2jvuKvJOD8"
 }
 [OK] Command completed
 
 ## Swagger form login returns JWT tokens
 $ curl -fsS -X POST http://127.0.0.1:8000/auth/swagger -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=admin@5stara.com&password=admin12345' | python3 -m json.tool
 {
-    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3ODc2Mzg2OH0.upK9FBCYpZPy8-W_0j5ho4CD0Euliprf_MD5Y70IVGo",
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3ODc2NTM2MX0.FR1WIuuv25uX-GbBaftPTZr4YfZyxxB47zCnHDQ6nYA",
     "token_type": "bearer",
     "expires_in": 1800,
-    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3OTM2Njg2OCwidHlwZSI6InJlZnJlc2giLCJqdGkiOiIxMjY5ZWUwY2Y2YzRmYjdkOWRmODQ2MTAifQ.wJ2OU0ZiIblUcs7VIrTsevJv2d97Pav0z5N0YZJgzB0"
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MDMzYjJhNC05ZjZlLTRjMWMtOWFhOS1jMTMyNzc5Y2I4MmEiLCJ1c2VyX2lkIjoiODAzM2IyYTQtOWY2ZS00YzFjLTlhYTktYzEzMjc3OWNiODJhIiwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5ANXN0YXJhLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTc3OTM2ODM2MSwidHlwZSI6InJlZnJlc2giLCJqdGkiOiI1ZTkyZjA3OGY2MTZiMzlhMGE1NGJiYjIifQ.YEoD7XkGXAjeiZtrv6iTwM8HPePfZbtlEVXVQwLCQcs"
 }
 [OK] Command completed

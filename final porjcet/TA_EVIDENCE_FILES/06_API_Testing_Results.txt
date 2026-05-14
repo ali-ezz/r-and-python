@@ -1,6 +1,6 @@
 TA Evidence 06 - API Testing Results
-Generated: 2026-05-14T12:34:04Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:58:55Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
 
@@ -40,10 +40,10 @@ $ curl -fsS http://127.0.0.1:8000/openapi.json | python3 -c 'import json,sys; da
 [OK] Command completed
 
 ## Local pytest API tests
-$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend' && '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/.venv/bin/pytest' -q --tb=line
+$ cd '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend' && '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend/.venv/bin/pytest' -q --tb=line
 ============================= test session starts ==============================
 platform darwin -- Python 3.9.6, pytest-7.4.3, pluggy-1.6.0
-rootdir: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend
+rootdir: /Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/backend
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-4.1.0, asyncio-0.21.1, anyio-3.7.1
@@ -72,7 +72,7 @@ tests/test_users.py ..                                                   [100%]
 Name                                   Stmts   Miss  Cover   Missing
 --------------------------------------------------------------------
 app/__init__.py                            1      0   100%
-app/config.py                             51      9    82%   47, 49, 53, 56, 63-67
+app/config.py                             51     10    80%   47, 49, 54-56, 63-67
 app/database.py                           62     48    23%   24-28, 32-68, 77-101, 106-128
 app/main.py                               55      3    95%   42-43, 101
 app/middleware/__init__.py                 3      0   100%
@@ -141,15 +141,14 @@ app/utils/nlp_parser.py                   31     22    29%   26-51
 app/utils/security.py                     71     31    56%   55-56, 60-61, 68-69, 73-83, 87-89, 93, 98-127
 app/utils/validators.py                    8      8     0%   1-25
 --------------------------------------------------------------------
-TOTAL                                   3595   1053    71%
+TOTAL                                   3595   1054    71%
 Coverage HTML written to dir cov_html
 
 
-============================= 66 passed in 20.45s ==============================
+============================= 66 passed in 20.21s ==============================
 [OK] Command completed
 
 ## Docker backend health check
-$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose ps backend
-NAME                   IMAGE                COMMAND                  SERVICE   CREATED          STATUS                   PORTS
-aliporjcet-backend-1   aliporjcet-backend   "uvicorn app.main:ap…"   backend   41 minutes ago   Up 7 minutes (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+$ cd '/Users/ali-ezz/Downloads/r-and-python/final porjcet' && docker compose ps backend
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
 [OK] Command completed

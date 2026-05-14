@@ -1,26 +1,26 @@
 TA Evidence 03 - Redis Cache Memory
-Generated: 2026-05-14T12:34:03Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:58:42Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
 
 ## Redis INFO memory
-$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose exec -T redis redis-cli INFO memory
+$ cd '/Users/ali-ezz/Downloads/r-and-python/final porjcet' && docker compose exec -T redis redis-cli INFO memory
 # Memory
-used_memory:1195024
-used_memory_human:1.14M
-used_memory_rss:13807616
-used_memory_rss_human:13.17M
-used_memory_peak:1238000
-used_memory_peak_human:1.18M
-used_memory_peak_perc:96.53%
-used_memory_overhead:983904
-used_memory_startup:981160
-used_memory_dataset:211120
-used_memory_dataset_perc:98.72%
-allocator_allocated:3920368
-allocator_active:13697024
-allocator_resident:16711680
+used_memory:1044424
+used_memory_human:1019.95K
+used_memory_rss:14270464
+used_memory_rss_human:13.61M
+used_memory_peak:1044424
+used_memory_peak_human:1019.95K
+used_memory_peak_perc:100.02%
+used_memory_overhead:981384
+used_memory_startup:981192
+used_memory_dataset:63040
+used_memory_dataset_perc:99.70%
+allocator_allocated:4784416
+allocator_active:13369344
+allocator_resident:16384000
 allocator_muzzy:0
 total_system_memory:8216776704
 total_system_memory_human:7.65G
@@ -40,19 +40,19 @@ used_memory_scripts_human:192B
 maxmemory:0
 maxmemory_human:0B
 maxmemory_policy:noeviction
-allocator_frag_ratio:4.51
-allocator_frag_bytes:6528784
-allocator_rss_ratio:1.22
+allocator_frag_ratio:2.96
+allocator_frag_bytes:5337056
+allocator_rss_ratio:1.23
 allocator_rss_bytes:3014656
-rss_overhead_ratio:0.83
-rss_overhead_bytes:-2904064
-mem_fragmentation_ratio:11.94
-mem_fragmentation_bytes:12651000
+rss_overhead_ratio:0.87
+rss_overhead_bytes:-2113536
+mem_fragmentation_ratio:14.18
+mem_fragmentation_bytes:13264424
 mem_not_counted_for_evict:0
 mem_replication_backlog:0
 mem_total_replication_buffers:0
 mem_clients_slaves:0
-mem_clients_normal:1928
+mem_clients_normal:0
 mem_cluster_links:0
 mem_aof_buffer:0
 mem_allocator:jemalloc-5.3.0
@@ -63,17 +63,17 @@ lazyfreed_objects:0
 [OK] Command completed
 
 ## Redis keyspace and stats
-$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose exec -T redis redis-cli INFO stats
+$ cd '/Users/ali-ezz/Downloads/r-and-python/final porjcet' && docker compose exec -T redis redis-cli INFO stats
 # Stats
-total_connections_received:56
-total_commands_processed:441
+total_connections_received:6
+total_commands_processed:5
 instantaneous_ops_per_sec:0
-total_net_input_bytes:22375
-total_net_output_bytes:11362
+total_net_input_bytes:107
+total_net_output_bytes:1497
 total_net_repl_input_bytes:0
 total_net_repl_output_bytes:0
-instantaneous_input_kbps:0.02
-instantaneous_output_kbps:0.88
+instantaneous_input_kbps:0.00
+instantaneous_output_kbps:0.00
 instantaneous_input_repl_kbps:0.00
 instantaneous_output_repl_kbps:0.00
 rejected_connections:0
@@ -84,14 +84,14 @@ expired_subkeys:0
 expired_keys:0
 expired_stale_perc:0.00
 expired_time_cap_reached_count:0
-expire_cycle_cpu_milliseconds:16
+expire_cycle_cpu_milliseconds:1
 evicted_keys:0
 evicted_clients:0
 evicted_scripts:0
 total_eviction_exceeded_time:0
 current_eviction_exceeded_time:0
 keyspace_hits:0
-keyspace_misses:16
+keyspace_misses:0
 pubsub_channels:0
 pubsub_patterns:0
 pubsubshard_channels:0
@@ -111,19 +111,19 @@ tracking_total_prefixes:0
 unexpected_error_replies:0
 total_error_replies:0
 dump_payload_sanitizations:0
-total_reads_processed:496
-total_writes_processed:441
+total_reads_processed:11
+total_writes_processed:5
 io_threaded_reads_processed:0
 io_threaded_writes_processed:0
 client_query_buffer_limit_disconnections:0
 client_output_buffer_limit_disconnections:0
-reply_buffer_shrinks:5
+reply_buffer_shrinks:0
 reply_buffer_expands:0
-eventloop_cycles:4725
-eventloop_duration_sum:3173352
-eventloop_duration_cmd_sum:2249
-instantaneous_eventloop_cycles_per_sec:10
-instantaneous_eventloop_duration_usec:509
+eventloop_cycles:486
+eventloop_duration_sum:324056
+eventloop_duration_cmd_sum:76
+instantaneous_eventloop_cycles_per_sec:9
+instantaneous_eventloop_duration_usec:871
 acl_access_denied_auth:0
 acl_access_denied_cmd:0
 acl_access_denied_key:0

@@ -1,54 +1,14 @@
 TA Evidence 01 - Database Tables and Row Counts
-Generated: 2026-05-14T12:34:03Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:58:32Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
-              List of relations
- Schema |        Name        | Type  | Owner 
---------+--------------------+-------+-------
- public | daily_goals        | table | user
- public | devices            | table | user
- public | friend_connections | table | user
- public | integrations       | table | user
- public | notifications      | table | user
- public | oauth_accounts     | table | user
- public | pomodoro_sessions  | table | user
- public | project_members    | table | user
- public | projects           | table | user
- public | refresh_tokens     | table | user
- public | task_attachments   | table | user
- public | task_comments      | table | user
- public | tasks              | table | user
- public | team_chat_messages | table | user
- public | user_analytics     | table | user
- public | users              | table | user
- public | widget_states      | table | user
- public | workspaces         | table | user
-(18 rows)
-
+Did not find any relations.
 
 ## PostgreSQL row counts
-$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose exec -T postgres psql -U user -d five_star_a -c "SELECT schemaname, relname AS table_name, n_live_tup AS estimated_rows FROM pg_stat_user_tables ORDER BY relname;"
- schemaname |     table_name     | estimated_rows 
-------------+--------------------+----------------
- public     | daily_goals        |              0
- public     | devices            |              0
- public     | friend_connections |              0
- public     | integrations       |              0
- public     | notifications      |              0
- public     | oauth_accounts     |              0
- public     | pomodoro_sessions  |              0
- public     | project_members    |              0
- public     | projects           |              1
- public     | refresh_tokens     |             18
- public     | task_attachments   |              0
- public     | task_comments      |              0
- public     | tasks              |              3
- public     | team_chat_messages |              3
- public     | user_analytics     |              0
- public     | users              |              4
- public     | widget_states      |              0
- public     | workspaces         |              3
-(18 rows)
+$ cd '/Users/ali-ezz/Downloads/r-and-python/final porjcet' && docker compose exec -T postgres psql -U user -d five_star_a -c "SELECT schemaname, relname AS table_name, n_live_tup AS estimated_rows FROM pg_stat_user_tables ORDER BY relname;"
+ schemaname | table_name | estimated_rows 
+------------+------------+----------------
+(0 rows)
 
 [OK] Command completed

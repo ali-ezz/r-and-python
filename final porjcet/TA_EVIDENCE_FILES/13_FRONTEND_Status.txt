@@ -1,11 +1,11 @@
 TA Evidence 13 - Frontend and Search UI
-Generated: 2026-05-14T12:34:38Z
-Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+Generated: 2026-05-14T12:59:31Z
+Project root: /Users/ali-ezz/Downloads/r-and-python/final porjcet
 ============================================================
 
 
 ## Frontend package
-$ sed -n '1,180p' '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/frontend_new/package.json'
+$ sed -n '1,180p' '/Users/ali-ezz/Downloads/r-and-python/final porjcet/five_star_a/frontend_new/package.json'
 {
   "name": "five-star-a-frontend",
   "private": true,
@@ -48,14 +48,14 @@ Vary: Origin
 Content-Type: text/html
 Cache-Control: no-cache
 Etag: W/"3f5-XtmLf97gC010aSBjKFr4jHdT5Pw"
-Date: Thu, 14 May 2026 12:34:38 GMT
+Date: Thu, 14 May 2026 12:59:31 GMT
 Connection: keep-alive
 Keep-Alive: timeout=5
 
 [OK] Command completed
 
 ## Search package
-$ sed -n '1,180p' '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/5A_Search/package.json'
+$ sed -n '1,180p' '/Users/ali-ezz/Downloads/r-and-python/final porjcet/5A_Search/package.json'
 {
   "name": "nevai",
   "private": true,
@@ -94,7 +94,7 @@ $ curl -I http://127.0.0.1:5173
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  759k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 HTTP/1.1 200 OK
 Server: nginx/1.31.0
-Date: Thu, 14 May 2026 12:34:38 GMT
+Date: Thu, 14 May 2026 12:59:31 GMT
 Content-Type: text/html
 Content-Length: 777508
 Last-Modified: Thu, 14 May 2026 07:54:03 GMT
