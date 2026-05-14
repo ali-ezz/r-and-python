@@ -1,0 +1,183 @@
+TA Evidence 11 - Validation, Clean Code, and Project Structure
+Generated: 2026-05-14T12:34:28Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Backend test files
+$ find '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests' -maxdepth 1 -type f -name 'test_*.py' | sort
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_analytics.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_auth.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_bulk_ops.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_comments.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_export.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_focus.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_friends.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_notifications.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_password_reset.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_projects.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_rate_limiting.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_role_authorization.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_search.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_status_transitions.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_system_monitoring.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_tasks.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/tests/test_users.py
+[OK] Command completed
+
+## Validation/security helpers
+$ find '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app' -type f | sort | grep -E '(schemas|validators|security|dependencies|middleware)'
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__init__.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/__init__.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/error_handler.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/logging.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/__pycache__/rate_limiter.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/error_handler.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/logging.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/middleware/rate_limiter.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__init__.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/__init__.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/analytics_focus.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/auth.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/common.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/notification.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/project.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/task.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/team_chat.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/__pycache__/user.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/analytics_focus.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/auth.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/common.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/notification.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/project.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/task.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/team_chat.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/schemas/user.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/__pycache__/dependencies.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/__pycache__/security.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/__pycache__/validators.cpython-39.pyc
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/dependencies.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/security.py
+/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/app/utils/validators.py
+[OK] Command completed
+
+## Requirements file
+$ sed -n '1,220p' '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/requirements.txt'
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+sqlalchemy==2.0.23
+alembic==1.12.1
+psycopg2-binary==2.9.9
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+pyotp==2.9.0
+qrcode==7.4.2
+pydantic==2.5.0
+pydantic-settings==2.1.0
+email-validator==2.1.0
+dateparser==1.2.0
+httpx==0.25.1
+python-dotenv==1.0.0
+pillow==10.1.0
+pytz==2023.3
+redis==5.0.1
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+[OK] Command completed
+
+## Focused validation/security tests
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend' && '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/.venv/bin/pytest' tests/test_auth.py tests/test_role_authorization.py tests/test_rate_limiting.py -q --tb=line
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-7.4.3, pluggy-1.6.0
+rootdir: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend
+configfile: pytest.ini
+plugins: cov-4.1.0, asyncio-0.21.1, anyio-3.7.1
+asyncio: mode=strict
+collected 19 items
+
+tests/test_auth.py ...                                                   [ 15%]
+tests/test_role_authorization.py .........                               [ 63%]
+tests/test_rate_limiting.py .......                                      [100%]
+
+---------- coverage: platform darwin, python 3.9.6-final-0 -----------
+Name                                   Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------
+app/__init__.py                            1      0   100%
+app/config.py                             51      9    82%   47, 49, 53, 56, 63-67
+app/database.py                           62     48    23%   24-28, 32-68, 77-101, 106-128
+app/main.py                               55      3    95%   42-43, 101
+app/middleware/__init__.py                 3      0   100%
+app/middleware/error_handler.py           17      5    71%   18-25, 36
+app/middleware/logging.py                 32      5    84%   26-33, 56
+app/middleware/rate_limiter.py            29      0   100%
+app/models/__init__.py                     9      0   100%
+app/models/device.py                      41      2    95%   42, 62
+app/models/integration.py                100      2    98%   71, 166
+app/models/notification.py                28      1    96%   47
+app/models/project.py                     48      2    96%   52, 75
+app/models/task.py                        80      3    96%   91, 110, 129
+app/models/team_chat.py                   16      1    94%   26
+app/models/user.py                        71      2    97%   108, 134
+app/models/workspace.py                   15      1    93%   27
+app/routers/__init__.py                    2      0   100%
+app/routers/analytics.py                  31     10    68%   32-33, 49-50, 59-60, 71-72, 82-83
+app/routers/attachments.py                37      9    76%   41-48, 67-68, 90-91
+app/routers/auth.py                      127     72    43%   60-62, 66-124, 129, 137, 146-149, 158-164, 189-213, 222-242
+app/routers/bulk_ops.py                  105     60    43%   26, 30-31, 70-98, 113-140, 155-169, 184-198
+app/routers/comments.py                   68     36    47%   45-54, 73-92, 103-113, 132-142
+app/routers/export.py                     78     24    69%   64, 68, 78-101, 116-145, 159-181
+app/routers/focus.py                      60     20    67%   42, 53, 71-72, 82-88, 97-98, 107-108, 116-119, 128-129, 138-145, 155-161
+app/routers/friends.py                    62     22    65%   39-56, 75-78, 87-88, 97-98, 108-109, 119-120, 130-131, 141-142, 151-152
+app/routers/integrations.py               33     12    64%   31-32, 50-59, 73-83
+app/routers/notifications.py              73     50    32%   26-48, 59-66, 79-80, 88-89, 94-131
+app/routers/password_reset.py             26     10    62%   24-27, 38-42, 52-56
+app/routers/projects.py                  116     51    56%   75-79, 103, 105, 118, 121-122, 133, 147-201, 210-215
+app/routers/search.py                     32      7    78%   44-101
+app/routers/spotify.py                    26     11    58%   21-24, 40-43, 53-55
+app/routers/system.py                     35     15    57%   24-28, 32-36, 56, 71-102
+app/routers/tasks.py                     114     49    57%   54, 70-75, 95-97, 106-114, 123-126, 135-138, 150, 163, 167-168, 178-182, 191-195, 205-212, 221-227
+app/routers/team_chat.py                  30     11    63%   25-39, 48-49, 67-68, 85-86
+app/routers/users.py                      89     50    44%   31, 53-57, 62, 73-77, 86-89, 99-109, 118-131, 141-165
+app/routers/views.py                      41     22    46%   40, 45-48, 64-87
+app/schemas/__init__.py                    6      0   100%
+app/schemas/analytics_focus.py            94      0   100%
+app/schemas/auth.py                       87     10    89%   55, 63, 94-97, 108-111
+app/schemas/common.py                     18      0   100%
+app/schemas/notification.py               28      0   100%
+app/schemas/project.py                    32      0   100%
+app/schemas/task.py                       76      0   100%
+app/schemas/team_chat.py                  19      0   100%
+app/schemas/user.py                       63      0   100%
+app/services/__init__.py                   2      0   100%
+app/services/analytics_service.py         90     75    17%   26-60, 88-127, 140-160, 173-202, 212-234, 252-266
+app/services/attachment_service.py        51     34    33%   33-34, 44-78, 86-89, 97, 111-127
+app/services/auth_service.py              97     34    65%   45, 62-63, 89, 91, 131-152, 160-168, 172-180, 185-191, 195-201
+app/services/cache_service.py             95     36    62%   39, 44-46, 54-58, 67-68, 72-73, 77-80, 91, 94-96, 107, 113-115, 123-130, 138-140
+app/services/comment_service.py           33     23    30%   21-32, 40, 55-70, 79-88
+app/services/email_service.py              6      3    50%   7-9
+app/services/focus_service.py             68     52    24%   15-34, 51-59, 63-70, 74-82, 86, 95, 111-130, 134-147
+app/services/friend_service.py            60     43    28%   23-63, 71, 87, 106-122, 131-144, 153-170, 179-194, 202
+app/services/integration_service.py       18     11    39%   15, 25-45
+app/services/notification_service.py      48     30    38%   37-38, 51-65, 75, 88-102, 106-121, 125
+app/services/password_service.py          51     35    31%   25-39, 44, 49-65, 70-78, 83-89
+app/services/project_service.py           66     25    62%   47, 52, 67, 81-87, 99-115, 119-134
+app/services/spotify_service.py           65     52    20%   19-29, 34-58, 63-92, 108-143
+app/services/task_service.py             284    171    40%   39, 55, 90, 97, 104-112, 116-119, 123-130, 137, 152-161, 174-182, 195-226, 236-276, 282, 291, 294, 298, 338, 342, 357, 362-366, 369-374, 377-378, 384, 388-389, 394, 400-402, 407-432, 436, 443-457, 461-483, 487-503, 507-531
+app/services/team_chat_service.py         45     33    27%   21-29, 38-42, 51-68, 72-87
+app/services/user_service.py              89     72    19%   19, 37, 43-56, 60-63, 69-85, 89-114, 118-167
+app/utils/__init__.py                      4      0   100%
+app/utils/dependencies.py                 39     11    72%   31, 35-36, 40, 47, 52-57, 64
+app/utils/helpers.py                       8      8     0%   1-13
+app/utils/nlp_parser.py                   31     22    29%   26-51
+app/utils/security.py                     71     31    56%   55-56, 60-61, 68-69, 73-83, 87-89, 93, 98-127
+app/utils/validators.py                    8      8     0%   1-25
+--------------------------------------------------------------------
+TOTAL                                   3595   1444    60%
+Coverage HTML written to dir cov_html
+
+
+============================== 19 passed in 7.90s ==============================
+[OK] Command completed

@@ -1,0 +1,38 @@
+TA Evidence 04 - Redis Cache Ping
+Generated: 2026-05-14T12:34:03Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Redis PING
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose exec -T redis redis-cli PING
+PONG
+[OK] Command completed
+
+## Backend cache health through API
+$ curl -fsS http://127.0.0.1:8000/system/metrics
+# HELP tms_http_requests_total Total HTTP requests observed by the app
+# TYPE tms_http_requests_total counter
+tms_http_requests_total 78
+# HELP tms_http_errors_total Total HTTP 5xx requests observed by the app
+# TYPE tms_http_errors_total counter
+tms_http_errors_total 0
+# HELP tms_http_request_latency_average_ms Average HTTP latency in milliseconds
+# TYPE tms_http_request_latency_average_ms gauge
+tms_http_request_latency_average_ms 19.9
+# HELP tms_cache_hit_ratio Cache hit ratio
+# TYPE tms_cache_hit_ratio gauge
+tms_cache_hit_ratio 0.0
+# HELP tms_users_total Total users
+# TYPE tms_users_total gauge
+tms_users_total 4
+# HELP tms_projects_total Total projects
+# TYPE tms_projects_total gauge
+tms_projects_total 1
+# HELP tms_tasks_total Total tasks
+# TYPE tms_tasks_total gauge
+tms_tasks_total 3
+tms_tasks_by_status{status="todo"} 3
+tms_tasks_by_status{status="in_progress"} 0
+tms_tasks_by_status{status="done"} 0
+[OK] Command completed

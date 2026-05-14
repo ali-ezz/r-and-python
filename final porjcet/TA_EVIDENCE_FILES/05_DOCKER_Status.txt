@@ -1,0 +1,38 @@
+TA Evidence 05 - Docker and Service Status
+Generated: 2026-05-14T12:34:04Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Docker containers
+$ docker ps --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}'
+NAMES                     IMAGE                    STATUS                   PORTS
+aliporjcet-prometheus-1   prom/prometheus:latest   Up 7 minutes             0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+aliporjcet-backend-1      aliporjcet-backend       Up 7 minutes (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+aliporjcet-frontend-1     aliporjcet-frontend      Up 7 minutes             0.0.0.0:80->80/tcp, [::]:80->80/tcp
+aliporjcet-grafana-1      grafana/grafana:latest   Up 7 minutes             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+aliporjcet-postgres-1     postgres:15-alpine       Up 7 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+aliporjcet-redis-1        redis:7-alpine           Up 7 minutes (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+aliporjcet-search-1       aliporjcet-search        Up 7 minutes             0.0.0.0:5173->80/tcp, [::]:5173->80/tcp
+[OK] Command completed
+
+## Docker Compose services
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose ps
+NAME                      IMAGE                    COMMAND                  SERVICE      CREATED          STATUS                   PORTS
+aliporjcet-backend-1      aliporjcet-backend       "uvicorn app.main:ap…"   backend      41 minutes ago   Up 7 minutes (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+aliporjcet-frontend-1     aliporjcet-frontend      "/docker-entrypoint.…"   frontend     3 hours ago      Up 7 minutes             0.0.0.0:80->80/tcp, [::]:80->80/tcp
+aliporjcet-grafana-1      grafana/grafana:latest   "/run.sh"                grafana      4 hours ago      Up 7 minutes             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+aliporjcet-postgres-1     postgres:15-alpine       "docker-entrypoint.s…"   postgres     4 hours ago      Up 7 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+aliporjcet-prometheus-1   prom/prometheus:latest   "/bin/prometheus --c…"   prometheus   7 minutes ago    Up 7 minutes             0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+aliporjcet-redis-1        redis:7-alpine           "docker-entrypoint.s…"   redis        4 hours ago      Up 7 minutes (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+aliporjcet-search-1       aliporjcet-search        "/docker-entrypoint.…"   search       4 hours ago      Up 7 minutes             0.0.0.0:5173->80/tcp, [::]:5173->80/tcp
+[OK] Command completed
+
+## Local managed processes
+$ ls -la '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/.run_pids'
+total 16
+drwxr-xr-x@  4 ali-ezz  staff  128 May 14 15:27 .
+drwxr-xr-x@ 13 ali-ezz  staff  416 May 14 15:10 ..
+-rw-r--r--@  1 ali-ezz  staff    6 May 14 15:27 backend.pid
+-rw-r--r--@  1 ali-ezz  staff    6 May 14 15:27 frontend.pid
+[OK] Command completed

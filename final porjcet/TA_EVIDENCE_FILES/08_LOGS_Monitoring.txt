@@ -1,0 +1,47 @@
+TA Evidence 08 - Monitoring Logs
+Generated: 2026-05-14T12:34:27Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Recent Docker Prometheus and Grafana logs
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose logs --since=5m prometheus grafana
+grafana-1  | logger=dashboard-service t=2026-05-14T12:29:50.759814292Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:30:20.747875542Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:30:50.747202167Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:31:20.748942584Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:31:50.756918209Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:32:20.750022126Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:32:50.765563376Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:33:20.754937667Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:33:50.753479834Z level=info msg="No last resource version found, starting from scratch" orgID=1
+grafana-1  | logger=dashboard-service t=2026-05-14T12:34:20.753575126Z level=info msg="No last resource version found, starting from scratch" orgID=1
+[OK] Command completed
+
+## Prometheus metrics endpoint
+$ curl -fsS http://127.0.0.1:8000/system/metrics
+# HELP tms_http_requests_total Total HTTP requests observed by the app
+# TYPE tms_http_requests_total counter
+tms_http_requests_total 87
+# HELP tms_http_errors_total Total HTTP 5xx requests observed by the app
+# TYPE tms_http_errors_total counter
+tms_http_errors_total 0
+# HELP tms_http_request_latency_average_ms Average HTTP latency in milliseconds
+# TYPE tms_http_request_latency_average_ms gauge
+tms_http_request_latency_average_ms 18.13
+# HELP tms_cache_hit_ratio Cache hit ratio
+# TYPE tms_cache_hit_ratio gauge
+tms_cache_hit_ratio 0.0
+# HELP tms_users_total Total users
+# TYPE tms_users_total gauge
+tms_users_total 4
+# HELP tms_projects_total Total projects
+# TYPE tms_projects_total gauge
+tms_projects_total 1
+# HELP tms_tasks_total Total tasks
+# TYPE tms_tasks_total gauge
+tms_tasks_total 3
+tms_tasks_by_status{status="todo"} 3
+tms_tasks_by_status{status="in_progress"} 0
+tms_tasks_by_status{status="done"} 0
+[OK] Command completed

@@ -1,0 +1,98 @@
+TA Evidence 07 - Backend Logs
+Generated: 2026-05-14T12:34:27Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Backend health endpoint
+$ curl -fsS http://127.0.0.1:8000/health
+{"status":"ok","service":"5*A API"}[OK] Command completed
+
+## Backend metrics snapshot
+$ curl -fsS http://127.0.0.1:8000/system/metrics
+# HELP tms_http_requests_total Total HTTP requests observed by the app
+# TYPE tms_http_requests_total counter
+tms_http_requests_total 86
+# HELP tms_http_errors_total Total HTTP 5xx requests observed by the app
+# TYPE tms_http_errors_total counter
+tms_http_errors_total 0
+# HELP tms_http_request_latency_average_ms Average HTTP latency in milliseconds
+# TYPE tms_http_request_latency_average_ms gauge
+tms_http_request_latency_average_ms 18.27
+# HELP tms_cache_hit_ratio Cache hit ratio
+# TYPE tms_cache_hit_ratio gauge
+tms_cache_hit_ratio 0.0
+# HELP tms_users_total Total users
+# TYPE tms_users_total gauge
+tms_users_total 4
+# HELP tms_projects_total Total projects
+# TYPE tms_projects_total gauge
+tms_projects_total 1
+# HELP tms_tasks_total Total tasks
+# TYPE tms_tasks_total gauge
+tms_tasks_total 3
+tms_tasks_by_status{status="todo"} 3
+tms_tasks_by_status{status="in_progress"} 0
+tms_tasks_by_status{status="done"} 0
+[OK] Command completed
+
+## Recent Docker backend logs
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose logs --since=5m backend
+backend-1  | INFO:     172.20.0.1:56676 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:37072 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:63702 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:35456 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:60814 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:35780 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:60272 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:52710 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:61414 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:57168 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:63296 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:44746 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:59482 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:39514 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:65110 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:41392 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:61602 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:45204 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57044 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:39462 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:55294 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:54690 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:56282 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:35778 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:55464 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:47192 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:65326 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:65340 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:65342 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:65346 - "GET /openapi.json HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:57980 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57740 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:41654 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57578 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57588 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57598 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57600 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57612 - "GET /openapi.json HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57626 - "POST /auth/login HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57648 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57634 - "POST /auth/swagger HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:46930 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:55472 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:55474 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:38832 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:55214 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:58952 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57968 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:58776 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:58782 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:58792 - "GET /openapi.json HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:40298 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57052 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     127.0.0.1:35000 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57208 - "GET /system/metrics HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57222 - "GET /health HTTP/1.1" 200 OK
+backend-1  | INFO:     172.20.0.1:57226 - "GET /system/metrics HTTP/1.1" 200 OK
+[OK] Command completed

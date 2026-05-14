@@ -1,0 +1,17 @@
+TA Evidence 02 - Database Users
+Generated: 2026-05-14T12:34:03Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## PostgreSQL users
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose exec -T postgres psql -U user -d five_star_a -c "SELECT id, email, username, role, is_active, is_verified FROM users ORDER BY id;"
+                  id                  |      email       | username |      role       | is_active | is_verified 
+--------------------------------------+------------------+----------+-----------------+-----------+-------------
+ 082af342-2ca5-47ba-adbd-4a793486dca5 | ali@gmail.com    | ali      | project_manager | t         | t
+ 690d2cf7-b6aa-49fa-af61-c588f81e1b2a | aliezz@gmail.com | alyan    | admin           | t         | t
+ 7d753a52-75f2-408a-9cde-a6fd1e62b12c | ahmed@gmail.com  | ahmed    | admin           | t         | t
+ 8033b2a4-9f6e-4c1c-9aa9-c132779cb82a | admin@5stara.com | admin    | admin           | t         | t
+(4 rows)
+
+[OK] Command completed

@@ -67,10 +67,10 @@ services:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - ./five_star_a/infra/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-    depends_on:
-      - backend
     restart: unless-stopped
 
   grafana:

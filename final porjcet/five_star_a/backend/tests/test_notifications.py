@@ -134,6 +134,14 @@ def test_completion_and_recurrence_create_notifications(client, auth_headers):
     assert task_response.status_code == 201
     task_id = task_response.json()["id"]
 
+    # Must transition to 'in_progress' before 'done'
+    in_progress_response = client.patch(
+        f"/tasks/{task_id}/status",
+        json={"status": "in_progress"},
+        headers=assignee_headers,
+    )
+    assert in_progress_response.status_code == 200
+
     complete_response = client.patch(
         f"/tasks/{task_id}/status",
         json={"status": "done"},

@@ -1,0 +1,105 @@
+TA Evidence 13 - Frontend and Search UI
+Generated: 2026-05-14T12:34:38Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Frontend package
+$ sed -n '1,180p' '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/frontend_new/package.json'
+{
+  "name": "five-star-a-frontend",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
+    "recharts": "^3.8.1",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.8"
+  }
+}
+[OK] Command completed
+
+## Frontend URL check
+$ curl -I http://127.0.0.1:2000
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/1.1 200 OK
+Vary: Origin
+Content-Type: text/html
+Cache-Control: no-cache
+Etag: W/"3f5-XtmLf97gC010aSBjKFr4jHdT5Pw"
+Date: Thu, 14 May 2026 12:34:38 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[OK] Command completed
+
+## Search package
+$ sed -n '1,180p' '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/5A_Search/package.json'
+{
+  "name": "nevai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.82",
+    "clsx": "2.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "tailwind-merge": "3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/node": "22.19.17",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^6.3.5",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
+[OK] Command completed
+
+## Search URL check
+$ curl -I http://127.0.0.1:5173
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  759k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/1.1 200 OK
+Server: nginx/1.31.0
+Date: Thu, 14 May 2026 12:34:38 GMT
+Content-Type: text/html
+Content-Length: 777508
+Last-Modified: Thu, 14 May 2026 07:54:03 GMT
+Connection: keep-alive
+ETag: "6a057f9b-bdd24"
+Accept-Ranges: bytes
+
+[OK] Command completed

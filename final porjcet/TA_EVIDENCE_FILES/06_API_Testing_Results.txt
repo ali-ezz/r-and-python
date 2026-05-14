@@ -1,0 +1,155 @@
+TA Evidence 06 - API Testing Results
+Generated: 2026-05-14T12:34:04Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Backend health endpoint
+$ curl -fsS http://127.0.0.1:8000/health
+{"status":"ok","service":"5*A API"}[OK] Command completed
+
+## OpenAPI endpoint
+$ curl -fsS http://127.0.0.1:8000/openapi.json | python3 -c 'import json,sys; data=json.load(sys.stdin); print(json.dumps({"title": data.get("info", {}).get("title"), "version": data.get("info", {}).get("version"), "path_count": len(data.get("paths", {})), "sample_paths": sorted(data.get("paths", {}))[:20]}, indent=2))'
+{
+  "title": "5*A API - Task Management System",
+  "version": "1.0.0",
+  "path_count": 79,
+  "sample_paths": [
+    "/analytics/goals-completion",
+    "/analytics/monthly-trend",
+    "/analytics/productivity-score",
+    "/analytics/streaks",
+    "/analytics/weekly",
+    "/auth/2fa/setup",
+    "/auth/2fa/verify",
+    "/auth/login",
+    "/auth/logout/device",
+    "/auth/oauth",
+    "/auth/password-reset/confirm",
+    "/auth/password-reset/request",
+    "/auth/password/change",
+    "/auth/password/reset/recovery-key",
+    "/auth/password/reset/totp",
+    "/auth/refresh",
+    "/auth/register",
+    "/chat",
+    "/chat/{message_id}",
+    "/export/analytics/json"
+  ]
+}
+[OK] Command completed
+
+## Local pytest API tests
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend' && '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend/.venv/bin/pytest' -q --tb=line
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-7.4.3, pluggy-1.6.0
+rootdir: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet/five_star_a/backend
+configfile: pytest.ini
+testpaths: tests
+plugins: cov-4.1.0, asyncio-0.21.1, anyio-3.7.1
+asyncio: mode=strict
+collected 66 items
+
+tests/test_analytics.py .....                                            [  7%]
+tests/test_auth.py ...                                                   [ 12%]
+tests/test_bulk_ops.py ....                                              [ 18%]
+tests/test_comments.py ...                                               [ 22%]
+tests/test_export.py ...                                                 [ 27%]
+tests/test_focus.py ..                                                   [ 30%]
+tests/test_friends.py ...                                                [ 34%]
+tests/test_notifications.py ...                                          [ 39%]
+tests/test_password_reset.py ...                                         [ 43%]
+tests/test_projects.py .                                                 [ 45%]
+tests/test_rate_limiting.py .......                                      [ 56%]
+tests/test_role_authorization.py .........                               [ 69%]
+tests/test_search.py ...                                                 [ 74%]
+tests/test_status_transitions.py ..........                              [ 89%]
+tests/test_system_monitoring.py ..                                       [ 92%]
+tests/test_tasks.py ...                                                  [ 96%]
+tests/test_users.py ..                                                   [100%]
+
+---------- coverage: platform darwin, python 3.9.6-final-0 -----------
+Name                                   Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------
+app/__init__.py                            1      0   100%
+app/config.py                             51      9    82%   47, 49, 53, 56, 63-67
+app/database.py                           62     48    23%   24-28, 32-68, 77-101, 106-128
+app/main.py                               55      3    95%   42-43, 101
+app/middleware/__init__.py                 3      0   100%
+app/middleware/error_handler.py           17      1    94%   36
+app/middleware/logging.py                 32      1    97%   56
+app/middleware/rate_limiter.py            29      0   100%
+app/models/__init__.py                     9      0   100%
+app/models/device.py                      41      2    95%   42, 62
+app/models/integration.py                100      2    98%   71, 166
+app/models/notification.py                28      1    96%   47
+app/models/project.py                     48      2    96%   52, 75
+app/models/task.py                        80      3    96%   91, 110, 129
+app/models/team_chat.py                   16      1    94%   26
+app/models/user.py                        71      2    97%   108, 134
+app/models/workspace.py                   15      1    93%   27
+app/routers/__init__.py                    2      0   100%
+app/routers/analytics.py                  31      0   100%
+app/routers/attachments.py                37      9    76%   41-48, 67-68, 90-91
+app/routers/auth.py                      127     72    43%   60-62, 66-124, 129, 137, 146-149, 158-164, 189-213, 222-242
+app/routers/bulk_ops.py                  105     13    88%   31, 78-79, 91-92, 118, 155-169
+app/routers/comments.py                   68      8    88%   47, 49, 75, 77, 107, 110, 136, 139
+app/routers/export.py                     78      3    96%   82, 120, 131
+app/routers/focus.py                      60      5    92%   71-72, 119, 128-129
+app/routers/friends.py                    62     16    74%   39-56, 108-109, 119-120, 130-131, 141-142, 151-152
+app/routers/integrations.py               33     12    64%   31-32, 50-59, 73-83
+app/routers/notifications.py              73     44    40%   26-48, 94-131
+app/routers/password_reset.py             26      8    69%   38-42, 52-56
+app/routers/projects.py                  116     51    56%   75-79, 103, 105, 118, 121-122, 133, 147-201, 210-215
+app/routers/search.py                     32      0   100%
+app/routers/spotify.py                    26     11    58%   21-24, 40-43, 53-55
+app/routers/system.py                     35      2    94%   27-28
+app/routers/tasks.py                     114     39    66%   54, 95-97, 106-114, 123-126, 135-138, 150, 163, 167-168, 180, 193, 195, 205-212, 221-227
+app/routers/team_chat.py                  30     11    63%   25-39, 48-49, 67-68, 85-86
+app/routers/users.py                      89     46    48%   31, 53-57, 86-89, 99-109, 118-131, 141-165
+app/routers/views.py                      41     22    46%   40, 45-48, 64-87
+app/schemas/__init__.py                    6      0   100%
+app/schemas/analytics_focus.py            94      0   100%
+app/schemas/auth.py                       87      7    92%   55, 63, 97, 108-111
+app/schemas/common.py                     18      0   100%
+app/schemas/notification.py               28      0   100%
+app/schemas/project.py                    32      0   100%
+app/schemas/task.py                       76      0   100%
+app/schemas/team_chat.py                  19      0   100%
+app/schemas/user.py                       63      0   100%
+app/services/__init__.py                   2      0   100%
+app/services/analytics_service.py         90     44    51%   101-127, 151-160, 173-202, 217
+app/services/attachment_service.py        51     34    33%   33-34, 44-78, 86-89, 97, 111-127
+app/services/auth_service.py              97     34    65%   45, 62-63, 89, 91, 131-152, 160-168, 172-180, 185-191, 195-201
+app/services/cache_service.py             95     27    72%   39, 44-46, 54-58, 67-68, 72-73, 77-80, 91, 94-96, 107, 113-115, 128-129
+app/services/comment_service.py           33      4    88%   22, 61, 65, 85
+app/services/email_service.py              6      3    50%   7-9
+app/services/focus_service.py             68     18    74%   15-34, 54, 57, 64, 76, 95, 112, 116, 140
+app/services/friend_service.py            60     30    50%   24, 37, 40, 53, 106-122, 131-144, 153-170, 179-194, 202
+app/services/integration_service.py       18     11    39%   15, 25-45
+app/services/notification_service.py      48     12    75%   37-38, 55, 75, 94, 115-121, 125
+app/services/password_service.py          51     29    43%   27, 44, 49-65, 70-78, 83-89
+app/services/project_service.py           66     25    62%   47, 52, 67, 81-87, 99-115, 119-134
+app/services/spotify_service.py           65     52    20%   19-29, 34-58, 63-92, 108-143
+app/services/task_service.py             284     99    65%   90, 97, 106, 108, 116-119, 125-130, 137, 158, 201, 245, 253, 257, 259, 261, 265, 267, 282, 291, 294, 298, 338, 342, 357, 362-366, 369-374, 377-378, 384, 388-389, 394, 400-402, 443-457, 461-483, 487-503, 507-531
+app/services/team_chat_service.py         45     33    27%   21-29, 38-42, 51-68, 72-87
+app/services/user_service.py              89     63    29%   37, 43-56, 60-63, 72, 89-114, 118-167
+app/utils/__init__.py                      4      0   100%
+app/utils/dependencies.py                 39     11    72%   31, 35-36, 40, 47, 52-57, 64
+app/utils/helpers.py                       8      8     0%   1-13
+app/utils/nlp_parser.py                   31     22    29%   26-51
+app/utils/security.py                     71     31    56%   55-56, 60-61, 68-69, 73-83, 87-89, 93, 98-127
+app/utils/validators.py                    8      8     0%   1-25
+--------------------------------------------------------------------
+TOTAL                                   3595   1053    71%
+Coverage HTML written to dir cov_html
+
+
+============================= 66 passed in 20.45s ==============================
+[OK] Command completed
+
+## Docker backend health check
+$ cd '/Users/ali-ezz/Desktop/R and python project 25/ali porjcet' && docker compose ps backend
+NAME                   IMAGE                COMMAND                  SERVICE   CREATED          STATUS                   PORTS
+aliporjcet-backend-1   aliporjcet-backend   "uvicorn app.main:ap…"   backend   41 minutes ago   Up 7 minutes (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+[OK] Command completed

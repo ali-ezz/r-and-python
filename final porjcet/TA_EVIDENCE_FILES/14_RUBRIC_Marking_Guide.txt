@@ -1,0 +1,67 @@
+TA Evidence 14 - Rubric Marking Guide
+Generated: 2026-05-14T12:34:38Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+Course:
+  DSC 306 R and Python Programming Language - Winter 2026
+
+Selected project idea:
+  5) Task Management System
+
+Main demo command:
+  ./run.sh
+
+Project URLs:
+  Backend health: http://127.0.0.1:8000/health
+  Swagger API:    http://127.0.0.1:8000/docs
+  Frontend UI:    http://127.0.0.1:2000
+  Search UI:      http://127.0.0.1:5173
+  Prometheus:     http://127.0.0.1:9090
+  Grafana:        http://127.0.0.1:3000
+  Grafana login:  admin / admin
+
+Rubric evidence map:
+  JWT - 3 marks
+    File: 10_JWT_Login_Demo.txt
+    Shows: /auth/login and /auth/swagger returning bearer JWT access_token and refresh_token.
+
+  Data Base - 2 marks
+    Files: 01_DB_Tables.txt, 02_DB_Users.txt
+    Shows: PostgreSQL tables, row counts, and demo users.
+
+  Validation of Project - 3 marks
+    File: 11_VALIDATION_Clean_Code.txt
+    Shows: Pydantic schemas, validation/security helpers, focused validation tests.
+
+  Clean Code - 2 marks
+    File: 11_VALIDATION_Clean_Code.txt
+    Shows: structured backend modules, service/router/schema split, requirements, tests.
+
+  Individual discussion - 8 marks
+    File: 15_INDIVIDUAL_Discussion.txt
+    Shows: member-by-member responsibility areas and files to discuss.
+
+  Logging & Monitoring Dashboard - 3 marks
+    Files: 07_LOGS_Backend.txt, 08_LOGS_Monitoring.txt
+    Shows: backend logs, request metrics, Prometheus/Grafana logs, monitoring metrics.
+
+  Caching - 2 marks
+    Files: 03_CACHE_Redis_Memory.txt, 04_CACHE_Redis_Ping.txt
+    Shows: Redis memory/stats, PING, and backend cache metrics.
+
+  API Testing - 1 mark
+    Files: 06_API_Testing_Results.txt, 09_API_Endpoints.txt
+    Shows: health endpoint, OpenAPI summary, pytest results, endpoint list.
+
+  Git & Github - 1 mark
+    File: 12_GIT_GitHub.txt
+    Shows: git status/log/remotes when a GitHub repo is configured.
+
+  Front End (Bonus) - 2 marks
+    File: 13_FRONTEND_Status.txt
+    Shows: React/Vite frontend and search UI package files plus HTTP 200 checks.
+
+  Docker (Bonus) - 2 marks
+    File: 05_DOCKER_Status.txt
+    Shows: Docker containers and Compose services.

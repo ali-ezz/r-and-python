@@ -1,0 +1,25 @@
+TA Evidence 12 - Git and GitHub
+Generated: 2026-05-14T12:34:38Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+Git is the only checklist item that is not currently complete from this folder.
+
+Current result:
+  This project root does not contain a .git directory, so git status/log/remote cannot be shown yet.
+
+TA demo command once GitHub is set:
+  git status
+  git log --oneline -10
+  git remote -v
+
+To complete the Git/GitHub mark before presentation:
+  1. Create a GitHub repository.
+  2. Run these commands from the project root:
+     git init
+     git add .
+     git commit -m "Prepare DSC 306 final project"
+     git branch -M main
+     git remote add origin <YOUR_GITHUB_REPO_URL>
+     git push -u origin main
+  3. Run ./run.sh again so this evidence file captures the real git log and remote.

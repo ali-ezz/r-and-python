@@ -1,0 +1,96 @@
+TA Evidence 09 - API Endpoints and Swagger
+Generated: 2026-05-14T12:34:27Z
+Project root: /Users/ali-ezz/Desktop/R and python project 25/ali porjcet
+============================================================
+
+
+## Health endpoint
+$ curl -fsS http://127.0.0.1:8000/health
+{"status":"ok","service":"5*A API"}[OK] Command completed
+
+## List OpenAPI paths
+$ curl -fsS http://127.0.0.1:8000/openapi.json | python3 -c 'import json,sys; data=json.load(sys.stdin); [print(path) for path in sorted(data.get("paths", {}))]'
+/analytics/goals-completion
+/analytics/monthly-trend
+/analytics/productivity-score
+/analytics/streaks
+/analytics/weekly
+/auth/2fa/setup
+/auth/2fa/verify
+/auth/login
+/auth/logout/device
+/auth/oauth
+/auth/password-reset/confirm
+/auth/password-reset/request
+/auth/password/change
+/auth/password/reset/recovery-key
+/auth/password/reset/totp
+/auth/refresh
+/auth/register
+/chat
+/chat/{message_id}
+/export/analytics/json
+/export/tasks/csv
+/export/tasks/json
+/focus/goals
+/focus/goals/{goal_id}/complete
+/focus/pomodoro/active
+/focus/pomodoro/history
+/focus/pomodoro/start
+/focus/pomodoro/{session_id}/complete
+/focus/weather
+/friends
+/friends/count
+/friends/pending
+/friends/request
+/friends/{connection_id}
+/friends/{connection_id}/accept
+/friends/{connection_id}/block
+/friends/{connection_id}/decline
+/health
+/integrations
+/integrations/connect
+/integrations/spotify/now-playing
+/integrations/spotify/recent
+/integrations/{provider}
+/notifications
+/notifications/read-all
+/notifications/{notification_id}/read
+/projects
+/projects/templates
+/projects/{project_id}
+/projects/{project_id}/duplicate
+/projects/{project_id}/share
+/search
+/system/dashboard
+/system/metrics
+/tasks
+/tasks/attachments/{attachment_id}
+/tasks/bulk/create
+/tasks/bulk/delete
+/tasks/bulk/priority
+/tasks/bulk/status
+/tasks/comments/{comment_id}
+/tasks/email
+/tasks/recurrence/run
+/tasks/voice
+/tasks/{task_id}
+/tasks/{task_id}/assign
+/tasks/{task_id}/attachments
+/tasks/{task_id}/comments
+/tasks/{task_id}/recurrence/next
+/tasks/{task_id}/reopen
+/tasks/{task_id}/status
+/users
+/users/avatar
+/users/me
+/users/search
+/users/{user_id}
+/views
+/views/dashboard/summary
+/views/{view_type}
+[OK] Command completed
+
+Swagger UI: http://127.0.0.1:8000/docs
+Frontend:   http://127.0.0.1:2000
+Search UI:  http://127.0.0.1:5173

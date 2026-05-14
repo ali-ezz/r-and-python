@@ -5,7 +5,8 @@ from typing import Optional
 import secrets
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Form
+from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
@@ -49,6 +50,16 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)) -> Token:
 	user = auth_service.authenticate_user(db, payload)
 	return auth_service.issue_token_pair(db, user)
 
+@router.post("/swagger", response_model=Token, include_in_schema=False)
+def swagger_login(
+    username: str = Form(...),
+    password: str = Form(...),
+    db: Session = Depends(get_db)
+) -> Token:
+        """Endpoint specifically for FastAPI Swagger UI authorization."""
+        payload = LoginRequest(username=username, password=password)
+        user = auth_service.authenticate_user(db, payload)
+        return auth_service.issue_token_pair(db, user)
 
 @router.post("/oauth", response_model=Token)
 async def oauth_login(payload: OAuth2LoginRequest, db: Session = Depends(get_db)) -> Token:
