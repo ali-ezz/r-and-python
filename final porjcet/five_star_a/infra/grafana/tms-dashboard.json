@@ -1,0 +1,53 @@
+{
+  "uid": "five-star-a-tms",
+  "title": "5*A Task Management Monitoring",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "15s",
+  "time": { "from": "now-1h", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "HTTP Requests",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+      "targets": [{ "expr": "tms_http_requests_total", "legendFormat": "requests" }]
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "HTTP 5xx Errors",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+      "targets": [{ "expr": "tms_http_errors_total", "legendFormat": "errors" }]
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Cache Hit Ratio",
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+      "targets": [{ "expr": "tms_cache_hit_ratio", "legendFormat": "hit ratio" }],
+      "fieldConfig": { "defaults": { "unit": "percentunit" } }
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Total Tasks",
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+      "targets": [{ "expr": "tms_tasks_total", "legendFormat": "tasks" }]
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "Tasks by Status",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 4 },
+      "targets": [{ "expr": "tms_tasks_by_status", "legendFormat": "{{status}}" }]
+    },
+    {
+      "id": 6,
+      "type": "timeseries",
+      "title": "Average Latency",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 4 },
+      "targets": [{ "expr": "tms_http_request_latency_average_ms", "legendFormat": "avg latency ms" }]
+    }
+  ]
+}

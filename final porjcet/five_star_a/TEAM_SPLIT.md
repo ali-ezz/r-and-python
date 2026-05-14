@@ -1,0 +1,266 @@
+تقسيم مسؤوليات الطلاب في مشروع Task Management System
+
+🧑‍💻 الطالب الأول: مهندس المعمارية والذكاء الاصطناعي
+
+مستوى الصعوبة: صعب 🔴
+
+مسؤول عن قوام الخادم الأساسي Backend Core، وواجهة محرك البحث المستقلة، وتحليل اللغات الطبيعية.
+
+📌 أولاً: ملفات مهام الجامعة
+
+معمارية الخادم وقاعدة البيانات
+
+ملفات:
+
+backend/app/main.py
+backend/app/config.py
+backend/app/database.py
+
+المسؤولية:
+تهيئة السيرفر، ربط قاعدة بيانات PostgreSQL، وضبط المتغيرات والإعدادات العامة للمشروع.
+
+مجلد:
+
+backend/app/middleware/
+
+المسؤولية:
+يحتوي على ملفات معالجة الأخطاء، حماية الضغط على السيرفر، وتسجيل الطلبات، مثل:
+
+error_handler.py
+rate_limiter.py
+logging.py
+
+🚀 ثانياً: الميزات الإضافية المتقدمة
+
+AI Search Frontend & NLP
+
+مجلد:
+
+5A_Search/
+
+المسؤولية:
+التطبيق المستقل المبني بـ React، والخاص بواجهة البحث المعتمدة على تقنيات الذكاء الاصطناعي.
+
+ملف:
+
+backend/app/utils/nlp_parser.py
+
+المسؤولية:
+كود الذكاء الاصطناعي المسؤول عن تحليل النصوص العادية وتحويلها إلى مهام منظمة داخل النظام.
+
+🧑‍💻 الطالب الثاني: مهندس قواعد البيانات وإدارة الملفات
+
+مستوى الصعوبة: متوسط إلى صعب 🟠
+
+مسؤول عن هندسة الجداول، ترحيل البيانات Migrations، وملفات النظام مثل المرفقات والتحميلات.
+
+📌 أولاً: ملفات مهام الجامعة
+
+الكيانات والـ Validation
+
+مجلد:
+
+backend/app/models/
+
+المسؤولية:
+تصميم جداول قاعدة البيانات باستخدام SQLAlchemy.
+
+مجلد:
+
+backend/app/schemas/
+
+المسؤولية:
+التحقق من صحة البيانات الداخلة والخارجة باستخدام Pydantic.
+
+مجلد:
+
+backend/alembic/
+
+المسؤولية:
+إدارة إصدارات قاعدة البيانات وتتبع التغييرات عليها باستخدام Migrations.
+
+🚀 ثانياً: الميزات الإضافية المتقدمة
+
+Uploads, Attachments & Bulk Operations
+
+مجلد وملف:
+
+uploads/
+backend/app/routers/attachments.py
+
+المسؤولية:
+برمجة نظام رفع وتخزين المرفقات والصور داخل المشروع.
+
+ملفات:
+
+backend/app/routers/export.py
+backend/app/routers/bulk_ops.py
+
+المسؤولية:
+تنفيذ أنظمة تصدير بيانات المهام والمشروعات كملفات، ودعم التعديل الجماعي على البيانات.
+
+🧑‍💻 الطالب الثالث: مهندس الحماية، المستخدمين والتواصل
+
+مستوى الصعوبة: صعب 🔴
+
+مسؤول عن نظام تسجيل الدخول، تقسيم الصلاحيات، إدارة المستخدمين، والدردشة الحية.
+
+📌 أولاً: ملفات مهام الجامعة
+
+Authentication & Role-Based Authorization
+
+ملفات:
+
+backend/app/routers/auth.py
+backend/app/routers/users.py
+
+المسؤولية:
+تنفيذ عمليات تسجيل الدخول، إنشاء المستخدمين، وإدارة بياناتهم.
+
+ملفات:
+
+backend/app/services/auth_service.py
+backend/app/services/user_service.py
+
+المسؤولية:
+تشفير كلمات المرور، إنشاء JWT Tokens، والتحقق منها عند استخدام المسارات المحمية.
+
+ملف:
+
+backend/app/utils/dependencies.py
+
+المسؤولية:
+يحتوي على الاعتمادات التي تحمي المسارات وتمنع المستخدمين من تجاوز صلاحياتهم، مثل منع الـ Employee من الوصول إلى صلاحيات المدير.
+
+🚀 ثانياً: الميزات الإضافية المتقدمة
+
+Social Features & Chat
+
+ملفات:
+
+backend/app/routers/team_chat.py
+backend/app/routers/friends.py
+
+المسؤولية:
+إنشاء نظام غرف المحادثة بين الموظفين، ونظام المتابعة أو الأصدقاء.
+
+ملف:
+backend/app/routers/notifications.py
+
+ملفات التنبيهات داخل:
+
+backend/app/models/
+
+المسؤولية:
+إنشاء نظام لإرسال وتسجيل إشعارات النظام للموظفين.
+
+🧑‍💻 الطالب الرابع: مهندس المهام والتصميم الأمامي
+
+مستوى الصعوبة: متوسط 🟡
+
+مسؤول عن ربط عمليات المهام والمشروعات في الـ Backend بالشكل المرئي داخل تطبيق الـ Frontend.
+
+📌 أولاً: ملفات مهام الجامعة
+
+RESTful API & Workflow
+
+ملفات:
+
+backend/app/routers/tasks.py
+backend/app/routers/projects.py
+
+المسؤولية:
+تنفيذ عمليات CRUD الخاصة بالمهام والمشروعات، مثل:
+
+إنشاء مهمة أو مشروع
+عرض المهام والمشروعات
+تعديل البيانات
+حذف السجلات
+
+ملفات:
+
+backend/app/services/task_service.py
+backend/app/services/project_service.py
+
+المسؤولية:
+تطبيق قوانين انتقال حالة المهمة Status Transitions، مثل منع رجوع المهمة من Done إلى To Do إذا كان ذلك مخالفًا لقواعد النظام.
+
+🚀 ثانياً: الميزات الإضافية المتقدمة
+
+Frontend UI & Interaction
+
+من مجلد الواجهة:
+
+frontend_new/src/components/
+frontend_new/src/pages/
+frontend_new/src/App.jsx
+frontend_new/src/index.css
+
+المسؤولية:
+برمجة الواجهات الرسومية، الصفحات، الأزرار، وتجربة المستخدم باستخدام React وTailwind CSS.
+
+ملفات:
+
+backend/app/routers/comments.py
+backend/app/routers/search.py
+backend/app/routers/views.py
+
+المسؤولية:
+تنفيذ أنظمة التعليقات النصية، البحث الداخلي، وتخصيص الواجهات أو طرق العرض داخل النظام.
+
+🧑‍💻 الطالب الخامس: مهندس الـ DevOps، الإحصائيات والتكامل
+
+مستوى الصعوبة: صعب جداً 🟣
+
+مسؤول عن تشغيل وربط المشروع بالكامل، بالإضافة إلى التحليلات الحسابية، الاختبارات، والتكامل مع الخدمات الخارجية.
+
+📌 أولاً: ملفات مهام الجامعة
+
+Bonus: Docker & Testing
+
+ملفات:
+
+docker-compose.yml
+run.sh
+backend/Dockerfile
+frontend_new/Dockerfile
+
+المسؤولية:
+تشغيل المشروع باستخدام Docker، وتجهيز بيئة تشغيل موحدة للـ Backend والـ Frontend وقاعدة البيانات.
+
+مجلد وملف:
+
+backend/tests/
+backend/pytest.ini
+
+المسؤولية:
+كتابة وتشغيل الاختبارات الآلية للـ API لضمان جودة النظام واكتشاف الأخطاء مبكرًا.
+
+🚀 ثانياً: الميزات الإضافية المتقدمة
+
+Analytics, State Management & Integrations
+
+من مجلد الواجهة:
+
+frontend_new/src/stores/
+frontend_new/src/services/
+frontend_new/vite.config.js
+
+المسؤولية:
+إدارة بيانات الـ Frontend، وربط الواجهة بالـ API، وتنظيم إعدادات Vite الخاصة بتشغيل وبناء الواجهة.
+
+ملفات:
+
+backend/app/routers/analytics.py
+backend/app/routers/focus.py
+
+المسؤولية:
+برمجة نظام بومودورو للتركيز، وحساب الإحصائيات والرسوم البيانية الخاصة بإنتاجية الموظف.
+
+ملفات:
+
+backend/app/routers/spotify.py
+backend/app/routers/integrations.py
+
+المسؤولية:
+تنفيذ التكامل البرمجي مع خدمات خارجية مثل Spotify، وربط النظام بأدوات أو خدمات إضافية.

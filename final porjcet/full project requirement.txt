@@ -1,0 +1,112 @@
+ (Project 5: Task Management System
+Description
+Develop a backend system for managing projects and tracking tasks with workflow validation.
+Entities
+ Users
+ Projects
+ Tasks
+Features
+ Project and task management
+ Task assignment to users
+ Task status lifecycle (To Do → In Progress → Done)
+ Enforce valid status transitions
+ Filter tasks by status, priority, and assignee
+Roles
+Admin: Manage projects and tasks
+Project Manager: Assign and monitor tasks
+Employee: Update assigned tasks only)(Backend Development with FastAPI
+Mandatory Requirements
+All projects must comply with the following requirements:
+
+Project Structure
+Students must organize their project using a clean and maintainable structure. The
+codebase should be modular, properly separated into components such as routes,
+models, schemas, and services.
+RESTful API Implementation
+The application must implement a fully functional RESTful API, including the following
+operations:
+ GET
+o Retrieve all records
+o Retrieve a single record by ID
+ POST
+o Create new records
+ PUT
+o Update existing records
+ DELETE
+o Remove records
+Additionally, students must ensure:
+ Proper use of HTTP status codes
+ Request validation using Pydantic models
+ Use of response models for consistent output formatting
+JWT Authentication
+The system must include secure authentication using JSON Web Tokens (JWT), with the
+following features:
+ User registration
+ User login
+ JWT token generation
+ Token validation
+ Protection of secured routes using authentication
+Role-Based Authorization
+The application must implement role-based access control with at least two roles, such as:
+ Admin
+ User
+Access to endpoints must be restricted based on roles. For example:
+ Admin users can perform delete operations
+ Regular users have limited access (e.g., read-only)
+Error Handling
+The project must include proper error handling mechanisms:
+ Use of HTTPException
+ Clear and descriptive error messages
+ Handling of validation errors
+Bonus Features (Optional )
+API Testing ( 1 Mark )
+ Use pytest
+ Use TestClient
+ Test authentication functionality
+ Test protected endpoints
+ Validate business logic
+Docker Integration ( 1 Mark )
+ Create a Dockerfile
+ Use docker-compose (e.g., for FastAPI app and database)
+ Ensure the application runs successfully in a Docker environment
+Frontend Integration ( 2 Mark )
+ Develop a simple frontend using:
+o HTML / CSS / JavaScript
+o React, Vue, or any other framework
+ The frontend must communicate with the FastAPI backend)(DSC 306 R and Python Programming Language Winter 2026
+DSC 306 R and Python Programming Language Winter 2026
+C O V E R S H E E T
+Project Idea:
+1) Student Management System
+2) Library Management System
+3) E-Commerce System
+4) Blog Management System
+5) Task Management System
+6) Hospital Appointment System
+7) Online Examination System
+Team Information (typed, not handwritten, except for the attendance signature):
+ID [Ordered by ID] Full Name [In Arabic] Attendance [Handwritten
+Final
+Signature]
+Grade
+1
+2
+3
+4
+5
+6
+Team Members
+Item Mark
+1 2 3 4 5 6
+JWT 3
+Data Base 2
+Validation of Project 3
+Clean Code 2
+Individual discussion 8
+Logging & Monitoring Dashboard 3
+Caching 2
+API Testing 1
+Git & Github 1
+Front End (Bonus) 2
+Docker (Bonus) 2
+Total 25

@@ -1,0 +1,10 @@
+apiVersion: 1
+
+providers:
+  - name: "Task Management Dashboards"
+    folder: "TMS"
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    options:
+      path: /var/lib/grafana/dashboards
